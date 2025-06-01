@@ -1,18 +1,9 @@
 <div class="container">
-    <h1 class="text-primary">Aplicación de Calculadora</h1>
-    <div>
-        <label class="form-label">Operando A</label> <br>
-        <input type="number" class="form-control"
-            (input) = 'capturaOperandA($event)'> <br>
-    </div>
-    <div>
-        <label class="form-label">Operando B</label> <br>
-        <input type="number" class="form-control"
-            [(ngModel)]='operandoB'> <br>
-    </div>
-    <button type="button" class="btn btn-primary"
-        (click) = 'sumar()'>Sumar</button> <br>
-    <div>
-        <output type="number"> Resultado: {{resultado}} </output>
-    </div>
+    <h1>{{titulo}}</h1>
+    <app-formulario
+        (enviarResultado)="mostrarResultado($event)">
+    </app-formulario>
+    <app-resultado
+        [resultadoHijo]="resultado">
+    </app-resultado>
 </div>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { outputAst } from '@angular/compiler';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-formulario',
@@ -6,12 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
-  operandoA: number = 0;
-  operandoB: number = 0;
-  resultado: number = 0;
+  @Output() enviarResultado = new EventEmitter<number>();
+
+  operandoA!: number;
+  operandoB!: number;
+  resultado!: number;
 
   sumar() {
     this.resultado = this.operandoA + this.operandoB;
+    this.enviarResultado.emit(this.resultado);
   }
 
 }

@@ -1,16 +1,15 @@
-<form class="row">
-    <div class="col-md-2">
-        <label for="operando_a" class="form-label">Operando A</label>
-        <input type="number" id="operando_a" class="form-control" [(ngModel)]="operandoA" 
-            name="operando_a">
+<form>
+    <div class="form-group">
+        <label>Operando A</label>
+        <input type="number" class="form-control" 
+            placeholder="Escribe operando A" [(ngModel)]="operandoA" 
+              name="operandoA" />
     </div>
-    <div class="col-md-2">
-        <label for="operando_b" class="form-label">Operando B</label>
-        <input type="number" id="operando_b" class="form-control" [(ngModel)]="operandoB" 
-            name="operando_b">
+    <div class="form-group">
+        <label>Operando B</label>
+        <input type="number" class="form-control"
+            placeholder="Escribe operando A" [(ngModel)]="operandoB" 
+            name="operandoB" />
     </div>
-    <div class="col-md-2">
-        <button type="submit" class="btn btn-primary" (click)="sumar()">Sumar</button>
-    </div>
-
+    <button type="submit" class="btn btn-primary" (click)="sumar()">Sumar</button>
 </form>

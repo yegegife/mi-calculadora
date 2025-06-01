@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-calculadora',
@@ -6,18 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./calculadora.component.css']
 })
 export class CalculadoraComponent {
-  operandoA: number = 0;
-  operandoB: number = 0;
   resultado: number = 0;
+  titulo: string = "Aplicación de Calculadora";
 
-  // se captura el valor del operando A a trvés de evento por parametro
-  capturaOperandA(event: Event){
-    //this.operandoA = Number((<HTMLInputElement>event?.target).value);
-    this.operandoA =  Number((event.target as HTMLInputElement).value);
-  }
-  
-  // se realiza la suma de los componentes A y B
-  sumar(){
-    this.resultado = this.operandoA + this.operandoB;
-  }
+  mostrarResultado(evento: number) {
+    this.resultado = evento;
+    console.log('Resultado recibido:', this.resultado);
+  }  
+
 }
